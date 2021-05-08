@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  --weaker-text: #5e5e5e;
+  --accent: rgb(79, 199, 255);
+}
+
+body {
+  background-color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  padding: 4rem 2rem 2rem 2rem;
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1.6rem 0 1.2rem;
+}
+
+p {
+  padding-bottom: 0.5rem;
+  color: var(--weaker-text);
+  line-height: 1.4;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+article {
+  padding-bottom: 3rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+nav {
+  padding: 1.5rem 0 2.5rem;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+.nav-list {
+  font-weight: 600;
+  color: var(--weaker-text);
+  font-size: 1.1rem;
+}
+
+.nav-list li {
+  display: inline;
+  padding-right: 2rem;
+}
+
+.article-links {
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding-top: 0.7rem;
+}
+
+.article-links li {
+  display: inline;
+  padding-right: 2rem;
+  color: var(--weaker-text);
+}
+
+.article-links li a {
+  background: linear-gradient(to bottom, var(--accent) 0%, var(--accent) 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 4px 2px;
+  text-decoration: none;
+  transition: background-size 0.2s;
+}
+
+.article-links li a:hover {
+  background-size: 4px 50px;
+  color: black;
+}
