@@ -67,7 +67,7 @@ a {
 
 .article-links li {
   display: inline;
-  padding-right: 2rem;
+  padding-right: 1rem;
   color: var(--weaker-text);
 }
 
@@ -87,7 +87,7 @@ a {
 
 @media only screen and (min-width: 700px) {
   body {
-    padding: 20vh 10vw;
+    padding: 18vh 10vw;
   }
 
   h1 {
