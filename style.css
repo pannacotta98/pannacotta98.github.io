@@ -59,6 +59,14 @@ a {
   padding-right: 2rem;
 }
 
+.nav-list a {
+  transition-duration: 0.1s;
+}
+
+.nav-list a:hover {
+  color: var(--accent);
+}
+
 .article-links {
   font-weight: 500;
   font-size: 0.95rem;
@@ -91,13 +99,25 @@ a {
   }
 
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
+}
 
+@media only screen and (min-width: 800px) {
   main {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  main {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  h1 {
+    font-size: 4rem;
   }
 }
 
