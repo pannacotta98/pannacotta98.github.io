@@ -1,0 +1,28 @@
+.img-grid {
+  column-count: 2;
+  column-gap: 1em;
+}
+
+.img-grid-item {
+  display: inline-block;
+  margin: 0 0 1em;
+  width: 100%;
+}
+
+@media only screen and (min-width: 800px) {
+  .img-grid {
+    column-count: 3;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .img-grid {
+    column-count: 4;
+  }
+}
+
+@media only screen and (min-width: 1900px) {
+  .img-grid {
+    column-count: 5;
+  }
+}

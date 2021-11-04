@@ -1,21 +1,34 @@
 * {
   box-sizing: border-box;
+  --main-background: white;
+  --strong-text: black;
   --weaker-text: #5e5e5e;
   --accent: rgb(79, 199, 255);
 }
 
+/* * {
+  box-sizing: border-box;
+  --main-background: rgb(17, 17, 17);
+  --strong-text: rgb(255, 255, 255);
+  --weaker-text: #b8b8b8;
+  --accent: rgb(79, 199, 255);
+} */
+
 body {
-  background-color: #ffffff;
+  color: var(--weaker-text);
+  background-color: var(--main-background);
   font-family: 'Poppins', sans-serif;
   padding: 4rem 2rem 2rem 2rem;
 }
 
 h1 {
+  color: var(--strong-text);
   font-size: 2.2rem;
   font-weight: 700;
 }
 
 h2 {
+  color: var(--strong-text);
   font-size: 1.5rem;
   font-weight: 700;
   padding: 1.6rem 0 1.2rem;
@@ -24,7 +37,6 @@ h2 {
 
 p {
   padding-bottom: 0.5rem;
-  color: var(--weaker-text);
   line-height: 1.4;
   font-weight: 500;
   font-size: 0.95rem;
@@ -50,7 +62,6 @@ a {
 
 .nav-list {
   font-weight: 600;
-  color: var(--weaker-text);
   font-size: 1.1rem;
 }
 
@@ -77,7 +88,6 @@ a {
 .article-links li {
   display: inline;
   padding-right: 1rem;
-  color: var(--weaker-text);
 }
 
 .article-links li a {
@@ -105,7 +115,7 @@ a {
 }
 
 @media only screen and (min-width: 800px) {
-  main {
+  .article-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2rem;
@@ -113,7 +123,7 @@ a {
 }
 
 @media only screen and (min-width: 1200px) {
-  main {
+  .article-grid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
