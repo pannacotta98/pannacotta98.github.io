@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="nst-images.css" />
+    <script src="https://kit.fontawesome.com/8be7cd92f9.js" crossorigin="anonymous"></script>
+    <script src="./anime.min.js"></script>
+    <script src="./script.js" defer></script>
+    <title>Algot Sandahl &mdash; Neural Style Transfer Images</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="nav-list">
+          <li>
+            <a href="./index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+          </li>
+        </ul>
+      </nav>
+      <h1>Neural Style Transfer Images</h1>
+    </header>
+
+    <main>
+      <h2></h2>
+      <div class="img-grid" id="nst-img-grid-container"></div>
+
+      <h2>The Style and Content Images Used</h2>
+      <div class="img-grid" id="nst-src-img-container"></div>
+    </main>
+
+    <template id="nst-img-grid-container-item">
+      <img
+        class="img-grid-item"
+        src="./assets/nst/library-the-scream.png"
+        alt="Neural Style Transfer Image"
+      />
+    </template>
+
+    <script>
+      const imgContainer = document.getElementById('nst-img-grid-container');
+      const itemTemplate = document.getElementById('nst-img-grid-container-item');
+      const generatedImageFileNames = [
+        'church-starry-night.png',
+        'campus-the-scream.png',
+        'the-scream-starry-night.png',
+        'campus-waves.png',
+        'the-library-waves.png',
+        'library-the-scream.png',
+        'picasso-lambo.png',
+        'scream-moon.png',
+        'starry-parlament.png',
+        'the-king-waves.png',
+        'picasso-opera.png',
+        'scream-lambo.png',
+        'the-scream-waves.png',
+        'scream-opera.png',
+        'picasso-moon.png',
+        'picasso-parlament.png',
+        'scream-parlament.png',
+        'starry-opera.png',
+        'scream-zebra.png',
+        'starry-lambo.png',
+        'starry-zebra.png',
+        'starry-moon.png',
+        'wave-lambo.png',
+      ];
+      generatedImageFileNames.forEach((fileName) => {
+        const clone = itemTemplate.content.firstElementChild.cloneNode(true);
+        clone.src = './assets/nst/' + fileName;
+        imgContainer.appendChild(clone);
+      });
+
+      const srcImgContainer = document.getElementById('nst-src-img-container');
+      const srcImageFileNames = [
+        'church.png',
+        'king.jpg',
+        'lambo.png',
+        'moon.png',
+        'opera.png',
+        'parlament.png',
+        'scream.jpg',
+        'starry.jpg',
+        'wave.jpg',
+        'zebra.png',
+      ];
+      srcImageFileNames.forEach((fileName) => {
+        const clone = itemTemplate.content.firstElementChild.cloneNode(true);
+        clone.src = './assets/nst/style-and-content/' + fileName;
+        srcImgContainer.appendChild(clone);
+      });
+
+      anime({
+        targets: '.img-grid-item',
+        delay: anime.stagger(30, { start: 500 }),
+        opacity: [0, 1],
+        duration: 700,
+        easing: 'linear',
+      });
+    </script>
+  </body>
+</html>
