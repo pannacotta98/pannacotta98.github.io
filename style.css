@@ -3,16 +3,9 @@
   --main-background: white;
   --strong-text: black;
   --weaker-text: #5e5e5e;
-  --accent: rgb(79, 199, 255);
+  /* --accent: rgb(79, 199, 255); */
+  --accent: rgb(40, 129, 170);
 }
-
-/* * {
-  box-sizing: border-box;
-  --main-background: rgb(17, 17, 17);
-  --strong-text: rgb(255, 255, 255);
-  --weaker-text: #b8b8b8;
-  --accent: rgb(79, 199, 255);
-} */
 
 body {
   color: var(--weaker-text);
@@ -25,9 +18,11 @@ h1 {
   color: var(--strong-text);
   font-size: 2.2rem;
   font-weight: 700;
+  line-height: 1.2;
 }
 
 h2 {
+  line-height: 1.2;
   color: var(--strong-text);
   font-size: 1.5rem;
   font-weight: 700;
@@ -40,6 +35,10 @@ p {
   font-weight: 500;
   font-size: 0.95rem;
   padding-bottom: 0.7rem;
+}
+
+.letter {
+  display: inline-block;
 }
 
 article {
@@ -58,6 +57,11 @@ nav {
 a {
   color: unset;
   text-decoration: none;
+  color: var(--accent);
+}
+
+nav a {
+  color: var(--weaker-text);
 }
 
 .nav-list {
@@ -66,9 +70,10 @@ a {
 }
 
 .nav-list li {
-  display: inline;
-  padding-right: 2rem;
-  line-height: 1.5;
+  display: inline-block;
+  position: relative;
+  margin-right: 2rem;
+  line-height: 1.7;
 }
 
 .nav-list a {
@@ -76,7 +81,7 @@ a {
 }
 
 .nav-list a:hover {
-  color: var(--accent);
+  color: var(--strong-text);
 }
 
 .article-links {
@@ -87,22 +92,33 @@ a {
 
 .article-links li {
   display: inline-block;
-  padding-right: 1rem;
+  position: relative;
+  margin-right: 1rem;
   padding-bottom: 0.5rem;
 }
 
-.article-links li a {
-  background: linear-gradient(to bottom, var(--accent) 0%, var(--accent) 100%);
-  background-position: 0 100%;
-  background-repeat: repeat-x;
-  background-size: 4px 2px;
-  text-decoration: none;
-  transition: background-size 0.2s;
+a:hover {
+  color: var(--strong-text);
 }
 
-.article-links li a:hover {
-  background-size: 4px 50px;
-  color: black;
+a:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0.2rem;
+  left: 0;
+  background-color: var(--accent);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s;
+}
+.nav-list a:after {
+  bottom: -0.1rem;
+}
+a:hover:after {
+  transform-origin: bottom left;
+  transform: scaleX(1);
 }
 
 @media only screen and (min-width: 700px) {
@@ -132,21 +148,3 @@ a {
     font-size: 4rem;
   }
 }
-
-/* .animating-text:hover {
-  color: #f35626;
-  background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: hue 10s infinite linear;
-  transition-duration: 300ms;
-}
-
-@-webkit-keyframes hue {
-  from {
-    -webkit-filter: hue-rotate(0deg);
-  }
-  to {
-    -webkit-filter: hue-rotate(-360deg);
-  }
-} */

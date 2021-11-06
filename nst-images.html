@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -13,13 +12,18 @@
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="nst-images.css" />
+    <script src="https://kit.fontawesome.com/8be7cd92f9.js" crossorigin="anonymous"></script>
+    <script src="./anime.min.js"></script>
+    <script src="./script.js" defer></script>
     <title>Algot Sandahl &mdash; Neural Style Transfer Images</title>
   </head>
   <body>
     <header>
       <nav>
         <ul class="nav-list">
-          <li><a href="./index.html">&lt; Back to Portfolio</a></li>
+          <li>
+            <a href="./index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+          </li>
         </ul>
       </nav>
       <h1>Neural Style Transfer Images</h1>
@@ -92,6 +96,14 @@
         const clone = itemTemplate.content.firstElementChild.cloneNode(true);
         clone.src = './assets/nst/style-and-content/' + fileName;
         srcImgContainer.appendChild(clone);
+      });
+
+      anime({
+        targets: '.img-grid-item',
+        delay: anime.stagger(30, { start: 500 }),
+        opacity: [0, 1],
+        duration: 700,
+        easing: 'linear',
       });
     </script>
   </body>
